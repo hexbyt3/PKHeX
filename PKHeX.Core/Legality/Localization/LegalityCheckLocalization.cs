@@ -218,13 +218,14 @@ public sealed class LegalityCheckLocalization
     public string GanbaruStatTooHigh { get; set; } = "One or more Ganbaru Value is above the natural limit of (10 - IV bonus).";
 
     public string GenderInvalidNone { get; set; } = "Genderless Pokémon should not have a gender.";
-    public string GeoBadOrder { get; set; } = "GeoLocation Memory: Gap/Blank present.";
     public string GeoHardwareInvalid { get; set; } = "Geolocation: Country is not in 3DS region.";
     public string GeoHardwareRange { get; set; } = "Invalid Console Region.";
     public string GeoHardwareValid { get; set; } = "Geolocation: Country is in 3DS region.";
     public string GeoMemoryMissing { get; set; } = "GeoLocation Memory: Memories should be present.";
     public string GeoNoCountryHT { get; set; } = "GeoLocation Memory: HT Name present but has no previous Country.";
-    public string GeoNoRegion { get; set; } = "GeoLocation Memory: Region without Country.";
+    public string GeoBadOrder_0 { get; set; } = "GeoLocation Memory #{0}: Gap/Blank present.";
+    public string GeoNoCountry_0 { get; set; } = "GeoLocation Memory #{0}: Region without Country.";
+    public string GeoNoRegion_0 { get; set; } = "GeoLocation Memory #{0}: Country without Region.";
 
     public string HyperTrainLevelGEQ_0 { get; set; } = "Can't Hyper Train a Pokémon that isn't level {0}.";
     public string HyperPerfectAll { get; set; } = "Can't Hyper Train a Pokémon with perfect IVs.";

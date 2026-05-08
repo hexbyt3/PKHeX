@@ -10,7 +10,7 @@ public static class GenerateMethodK
     /// <summary>
     /// Applies a random PID and IVs to the entity, based on the <see cref="PersonalInfo4"/> and <see cref="EncounterCriteria"/>.
     /// </summary>
-    /// <param name="enc">Encounter slot to generate for</param>
+    /// <param name="enc">Encounter slot</param>
     /// <param name="pk">Entity to modify</param>
     /// <param name="pi">Personal Info of the entity</param>
     /// <param name="criteria">Criteria to match</param>
@@ -33,8 +33,8 @@ public static class GenerateMethodK
         {
             if (checkProc)
             {
-                var check = new LeadSeed(seed, LeadRequired.None);
-                if (!MethodK.CheckEncounterActivation(enc, ref check))
+                var ls = new LeadSeed(seed, LeadRequired.None);
+                if (!MethodK.CheckEncounterActivation(enc, ref ls))
                 {
                     seed = LCRNG.Next(seed);
                     continue;
@@ -107,7 +107,7 @@ public static class GenerateMethodK
     /// <summary>
     /// Applies the IVs from the <see cref="EncounterCriteria"/>, assuming the IVs are possible and a Method 1 spread is possible.
     /// </summary>
-    /// <param name="enc">Encounter slot to generate for</param>
+    /// <param name="enc">Encounter slot</param>
     /// <param name="pk">Entity to modify</param>
     /// <param name="pi">Personal Info of the entity</param>
     /// <param name="criteria">Criteria to match</param>

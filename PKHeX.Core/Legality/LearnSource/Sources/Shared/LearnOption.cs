@@ -28,11 +28,19 @@ public enum LearnOption
     /// Required to be distinct in that the rules are different from the other two options. TR/TM flags aren't required if the move was learned via HOME.
     /// </remarks>
     HOME,
+
+    /// <summary>
+    /// Check backwards of knowing moves within any game in the visitation chain.
+    /// </summary>
+    /// <remarks>
+    /// Relevant for Evolution move sanity checks, where the move could have been picked up at any point in the game visitation chain.
+    /// </remarks>
+    AtAnyTimeChain,
 }
 
 public static class LearnOptionExtensions
 {
     public static bool IsCurrent(this LearnOption option) => option == LearnOption.Current;
-    public static bool IsPast(this LearnOption option) => option is LearnOption.AtAnyTime or LearnOption.HOME;
+    public static bool IsPast(this LearnOption option) => option is LearnOption.AtAnyTime or LearnOption.HOME or LearnOption.AtAnyTimeChain;
     public static bool IsFlagCheckRequired(this LearnOption option) => option != LearnOption.HOME;
 }

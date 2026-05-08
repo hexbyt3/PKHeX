@@ -525,16 +525,18 @@ public static class MethodK
         // The only entry into this method requires an ability that has no species available with Sweet Scent.
         // Therefore, without Sweet Scent, we need to trigger via turning/walking.
         // With an area rate of 25, this arrangement will succeed 37% of the time.
+        // However, White Flute cannot stay active as you cannot use it during a BCC, and entering the BCC has a screen transition (disabling it).
 
         // The game checks 2 random calls to trigger the encounter: movement -> rate -> generate.
         // HG/SS has an underflow error (via radio) which can pass the first rand call for movement.
         // Only need to check the second call for rate.
         // Rate can be improved by 50% if the White Flute is used.
         // Other abilities can also affect the rate, but we can't use them with our current lead.
-        var rate = areaRate + (areaRate >> 1); // +50% White Flute
+
+        // areaRate += (areaRate >> 1); // +50% White Flute
         var rand = (result >> 16);
         var roll = rand % 100;
-        if (roll >= rate)
+        if (roll >= areaRate)
             return false;
 
         // Skip backwards before the two calls. Valid encounter seed found.

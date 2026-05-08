@@ -27,7 +27,7 @@ public sealed class SAV4HGSS : SAV4, IBoxDetailName, IBoxDetailWallpaper
     public override Zukan4 Dex { get; }
     protected override SAV4 CloneInternal4() => State.Exportable ? new SAV4HGSS(Data.ToArray()) : new SAV4HGSS();
 
-    public override GameVersion Version { get => GameVersion.HGSS; set { } }
+    public override GameVersion Version { get => (GameVersion)ROMCode; set => ROMCode = (byte)value; }
     public override PersonalTable4 Personal => PersonalTable.HGSS;
     public override ReadOnlySpan<ushort> HeldItems => Legal.HeldItems_HGSS;
     public override int MaxItemID => Legal.MaxItemID_4_HGSS;

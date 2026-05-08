@@ -86,7 +86,7 @@ public static class BoxExport
 
         int count = GetSlotCountForBox(boxSlotCount, box, total);
         int ctr = 0;
-        // Export each slot in the box.
+        // Export each slot in the box with party stats, to be nice to any external analysis.
         for (int slot = 0; slot < count; slot++)
         {
             var pk = sav.GetBoxSlotAtIndex(box, slot);
@@ -98,6 +98,9 @@ public static class BoxExport
 
             var fileName = GetFileName(pk, settings.FileIndexPrefix, namer, box, slot, boxSlotCount);
             var fn = Path.Combine(destPath, fileName);
+
+            // Rather than export all-zero party stats, calculate what they would be.
+            pk.ForcePartyData();
             File.WriteAllBytes(fn, pk.DecryptedPartyData);
             ctr++;
         }

@@ -129,7 +129,7 @@ public static class LegalityCheckResultCodeExtensions
 
         // Evolution
         EvoInvalid => localization.EvoInvalid,
-        EvoTradeReqOutsider_0 => localization.EvoTradeReqOutsider,
+        EvoTradeReqOutsider_01 => localization.EvoTradeReqOutsider,
         EvoTradeRequired => localization.EvoTradeRequired,
 
         // Form
@@ -249,13 +249,14 @@ public static class LegalityCheckResultCodeExtensions
         G7BSocialShouldBe100Mood => localization.G7BSocialShouldBe100Mood,
         GanbaruStatLEQ_01 => localization.GanbaruStatTooHigh,
         GenderInvalidNone => localization.GenderInvalidNone,
-        GeoBadOrder => localization.GeoBadOrder,
         GeoHardwareInvalid => localization.GeoHardwareInvalid,
         GeoHardwareRange => localization.GeoHardwareRange,
         GeoHardwareValid => localization.GeoHardwareValid,
         GeoMemoryMissing => localization.GeoMemoryMissing,
         GeoNoCountryHT => localization.GeoNoCountryHT,
-        GeoNoRegion => localization.GeoNoRegion,
+        GeoBadOrder_0 => localization.GeoBadOrder_0,
+        GeoNoCountry_0 => localization.GeoNoCountry_0,
+        GeoNoRegion_0 => localization.GeoNoRegion_0,
         HintEvolvesToSpecies_0 => localization.HintEvolvesToSpecies_0,
         HintEvolvesToRareForm_0 => localization.HintEvolvesToRareForm_0,
         ItemEgg => localization.ItemEgg,

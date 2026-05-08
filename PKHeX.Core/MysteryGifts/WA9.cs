@@ -710,10 +710,9 @@ public sealed class WA9(Memory<byte> raw) : DataMysteryGift(raw), ILangNick, INa
             if (pk.FlawlessIVCount != FlawlessIVCount)
                 return false; // HOME ZA-starters have non-perfect IVs to 20, so IVs at 31 can't exceed the flawless count.
 
-            Span<int> IVs = stackalloc int[6];
-            pk.GetIVs(IVs);
-            foreach (var iv in IVs)
+            for (var i = 0; i < 6; i++)
             {
+                var iv = pk.GetIV(i);
                 if (iv != 31 && iv != HomeBaseIV)
                     return false;
             }

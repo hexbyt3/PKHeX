@@ -22,8 +22,8 @@ public static class GenerateMethodH
         {
             if (checkProc)
             {
-                var check = new LeadSeed(seed, LeadRequired.None);
-                if (!MethodH.CheckEncounterActivation(enc, ref check))
+                var ls = new LeadSeed(seed, LeadRequired.None);
+                if (!MethodH.CheckEncounterActivation(enc, ref ls))
                 {
                     seed = LCRNG.Next(seed);
                     continue;
