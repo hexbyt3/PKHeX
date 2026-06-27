@@ -250,6 +250,7 @@ public enum LegalityCheckResultCode : ushort
     // Moves - General
     MoveKeldeoMismatch,
     MovesShouldMatchRelearnMoves,
+    MovePPMatchesVirtualConsole,
 
     // Moves - Shop & Alpha
     MoveShopAlphaMoveShouldBeOther,

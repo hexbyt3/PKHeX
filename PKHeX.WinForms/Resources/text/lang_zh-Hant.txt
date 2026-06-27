@@ -306,6 +306,7 @@ LocalizedDescription.ShowEncounterColorPKM=Show a background to differentiate th
 LocalizedDescription.ShowEncounterOpacityBackground=遇見方式指示背景層之透明度。
 LocalizedDescription.ShowEncounterOpacityStripe=遇見方式指示條之透明度。
 LocalizedDescription.ShowEncounterThicknessStripe=遇見方式指示條之畫素高度。
+LocalizedDescription.ShowExperienceBar=顯示個體時，顯示經驗值條以便編輯EXP和等級。
 LocalizedDescription.ShowExperiencePercent=Show a thin stripe to indicate the percent of level-up progress
 LocalizedDescription.ShowGenderGen1=When showing a Generation 1 format entity, show the gender it would have if transferred to other generations.
 LocalizedDescription.ShowLegalBallsFirst=When showing the list of balls to select, show the legal balls before the illegal balls rather than sorting by Ball ID.

@@ -226,6 +226,7 @@
     "MoveEvoFCombination_0": "기술 조합이 {0} 진화와 호환되지 않습니다.",
     "MoveFExpectSingle_0": "Expected: {0}",
     "MoveKeldeoMismatch": "케르디오의 기술과 폼이 일치하지 않습니다.",
+    "MovePPMatchesVirtualConsole": "기술의 PP가 3DS 가상 콘솔 전송 버그의 값과 정확히 일치합니다.",
     "MovePPExpectHealed_0": "Move {0} PP is below the amount expected.",
     "MovePPTooHigh_0": "기술 {0}의 PP가 허용된 값보다 많습니다.",
     "MovePPUpsTooHigh_0": "Move {0} PP Ups is above the amount allowed.",

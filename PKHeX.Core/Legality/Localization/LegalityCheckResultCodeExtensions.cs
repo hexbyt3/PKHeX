@@ -308,6 +308,7 @@ public static class LegalityCheckResultCodeExtensions
 
         MetDetailTimeOfDay => localization.MetDetailTimeOfDay,
         MoveKeldeoMismatch => localization.MoveKeldeoMismatch,
+        MovePPMatchesVirtualConsole => localization.MovePPMatchesVirtualConsole,
         MovesShouldMatchRelearnMoves => localization.MovesShouldMatchRelearnMoves,
         MoveShopAlphaMoveShouldBeMastered_0 => localization.MoveShopAlphaMoveShouldBeMastered_0,
         MoveShopAlphaMoveShouldBeOther => localization.MoveShopAlphaMoveShouldBeOther,

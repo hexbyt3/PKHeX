@@ -225,6 +225,7 @@
     "MoveEvoFCombination_0": "Moves combinations is not compatible with {0} evolution.",
     "MoveFExpectSingle_0": "Expected: {0}",
     "MoveKeldeoMismatch": "Keldeo Move/Form mismatch.",
+    "MovePPMatchesVirtualConsole": "Die AP der Attacken stimmen exakt mit den Werten des 3DS‑Virtual‑Console‑Transferfehlers überein.",
     "MovePPExpectHealed_0": "Move {0} PP is below the amount expected.",
     "MovePPTooHigh_0": "Move {0} PP is above the amount allowed.",
     "MovePPUpsTooHigh_0": "Move {0} PP Ups is above the amount allowed.",

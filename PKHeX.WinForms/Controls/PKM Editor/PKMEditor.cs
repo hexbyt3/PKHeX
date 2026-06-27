@@ -1428,6 +1428,9 @@ public sealed partial class PKMEditor : UserControl, IMainEditor
 
     private void UpdateNickname(object sender, EventArgs e)
     {
+        if (!FieldsLoaded)
+            return;
+
         if (sender == Label_Species)
         {
             switch (ModifierKeys)

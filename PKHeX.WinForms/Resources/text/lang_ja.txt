@@ -306,6 +306,7 @@ LocalizedDescription.ShowEncounterColorPKM=Show a background to differentiate th
 LocalizedDescription.ShowEncounterOpacityBackground=Opacity for the Encounter Type background layer.
 LocalizedDescription.ShowEncounterOpacityStripe=Opacity for the Encounter Type stripe layer.
 LocalizedDescription.ShowEncounterThicknessStripe=エンカウントタイプのカラーストライプを表示する時のピクセルの太さ。
+LocalizedDescription.ShowExperienceBar=個体を表示する際、EXPとレベルを編集できるように経験値バーを表示します。
 LocalizedDescription.ShowExperiencePercent=次のレベルに必要な経験値のストライプを表示します。
 LocalizedDescription.ShowGenderGen1=１世代のゲームを編集時、２世代の条件でポケモンの性別を表示するかどうか。
 LocalizedDescription.ShowLegalBallsFirst=ボールを選択する時のリストはID順ではなく、正規が先で後から不正の順番にする。

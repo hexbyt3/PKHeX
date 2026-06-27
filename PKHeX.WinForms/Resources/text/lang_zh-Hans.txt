@@ -306,6 +306,7 @@ LocalizedDescription.ShowEncounterColorPKM=显示背景以区分PKM槽位的已�
 LocalizedDescription.ShowEncounterOpacityBackground=相遇方式指示背景层的透明度。
 LocalizedDescription.ShowEncounterOpacityStripe=相遇方式指示条的透明度。
 LocalizedDescription.ShowEncounterThicknessStripe=相遇方式指示条的画素高度。
+LocalizedDescription.ShowExperienceBar=显示个体时，显示经验条以便编辑EXP和等级。
 LocalizedDescription.ShowExperiencePercent=显示一条细条纹来表示升级进度的百分比。
 LocalizedDescription.ShowGenderGen1=当显示第1代格式的数据时，显示其在转移到其他代时会有的性别。
 LocalizedDescription.ShowLegalBallsFirst=当显示要选择的球列表时，在非法球之前显示合法球，而不是按球ID排序。
