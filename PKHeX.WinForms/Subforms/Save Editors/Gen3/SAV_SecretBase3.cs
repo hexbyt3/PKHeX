@@ -70,7 +70,7 @@ public partial class SAV_SecretBase3 : Form
         {
             if (TB_PID.Text.Length == 0)
                 TB_PID.Text = "0";
-            if (!TB_PID.Text.All(c => "0123456789abcdefABCDEF\n".Contains(c)))
+            if (!TB_PID.Text.All(char.IsAsciiHexDigit))
                 TB_PID.Text = uint.MaxValue.ToString("X8");
         };
 

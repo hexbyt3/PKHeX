@@ -167,8 +167,6 @@ public static class MethodH
                 result.Lead = CuteCharm;
                 if (CheckEncounterActivationEmerald(enc, ref result))
                 {
-                    if (result.IsNoRequirement())
-                        return result;
                     if (result.IsBetterThan(prefer))
                         prefer = result;
                 }
