@@ -535,6 +535,10 @@ public sealed class WA8(Memory<byte> raw) : DataMysteryGift(raw), ILangNick, INa
     /// </summary>
     public bool IsScalarFixed => CardID is 9027;
 
+    // HOME Gift Enamorus: 127,127 with imprecise floats (manually entered in HOME, not calculated).
+    internal const float EnamorusHeight = 160.0f;
+    internal const float EnamorusWeight = 479.2f;
+
     private byte GetHomeScalar() => CardID switch
     {
         9027 => 127,

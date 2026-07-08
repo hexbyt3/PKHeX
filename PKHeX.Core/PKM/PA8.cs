@@ -388,6 +388,7 @@ public sealed class PA8 : PKM, ISanityChecksum,
     public byte GV_SPE { get => Data[0xA7]; set => Data[0xA7] = value; }
     public byte GV_SPA { get => Data[0xA8]; set => Data[0xA8] = value; }
     public byte GV_SPD { get => Data[0xA9]; set => Data[0xA9] = value; }
+    public bool HasUsedGrit => Data.Slice(0xA4, 6).ContainsAnyExcept<byte>(0);
 
     // 0xAA-0xAB unused
 
@@ -687,6 +688,19 @@ public sealed class PA8 : PKM, ISanityChecksum,
 
         float ratio = (WeightRatio * HeightRatio);
         return ratio * p.Weight;
+    }
+
+    public static float GetHeightAbsoluteFused(ushort h, byte heightScalar)
+        => h * GetScalarPercentFused(heightScalar);
+    public static float GetWeightAbsoluteFused(ushort w, byte heightScalar, byte weightScalar)
+        => w * (GetScalarPercentFused(heightScalar) * GetScalarPercentFused(weightScalar));
+
+    /// <summary> FMADD variant, a new compiler optimization starting in HOME 4.0.0 </summary>
+    [MethodImpl(MethodImplOptions.NoOptimization | MethodImplOptions.NoInlining)]
+    private static float GetScalarPercentFused(byte scalar) // +/- 20%
+    {
+        float percent = scalar / 255.0f; // 0x437F0000
+        return MathF.FusedMultiplyAdd(percent, 0.40000004f, 0.8f); // 0.40000004f = 0x3ECCCCCE, 0.8f = 0x3F4CCCCD
     }
 
     [MethodImpl(MethodImplOptions.NoOptimization | MethodImplOptions.NoInlining)]
