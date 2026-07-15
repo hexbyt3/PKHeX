@@ -25,7 +25,7 @@ public sealed class BK4 : G4PKM
 
     public override byte[] DecryptedBoxData => EncryptedBoxData;
 
-    public override bool Valid => ChecksumValid || (Sanity == 0 && Species <= MaxSpeciesID);
+    public override bool Valid => ChecksumValid || ((Sanity == 0 || (Sanity & 0x4000) != 0) && Species <= MaxSpeciesID);
 
     public static BK4 ReadUnshuffle(ReadOnlySpan<byte> data)
     {
