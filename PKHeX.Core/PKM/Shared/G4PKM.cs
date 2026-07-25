@@ -272,12 +272,45 @@ public abstract class G4PKM : PKM, IHandlerUpdate,
             BallDPPt = Clamp(value, Core.Ball.Cherish);
 
             // Only set the HG/SS value if it originated in HG/SS and was not an event.
-            if (!HGSS || FatefulEncounter)
-                BallHGSS = 0;
-            else
+            if (WasCreatedInHGSS && this is not BK4)
                 BallHGSS = Clamp(value, Core.Ball.Sport);
+            else
+                BallHGSS = 0;
         }
     }
+
+    private bool WasCreatedInHGSS
+    {
+        get
+        {
+            if (Gen3)
+                return PossiblyPalParkHGSS;
+
+            if (HGSS)
+            {
+                // Retain value if it was a transferred egg hatched outside HG/SS.
+                if (BallHGSS == 0 && WasTradedEgg && !EggHatchLocation4.IsValidMet4HGSS(MetLocationExtended))
+                    return false;
+                return !FatefulEncounter || EggLocation != 0; // Ranger Manaphy was the only egg ever distributed.
+            }
+            else // D/P/Pt
+            {
+                // Retain value if it was a transferred egg hatched in HG/SS.
+                if (BallHGSS != 0 && WasTradedEgg && EggHatchLocation4.IsValidMet4HGSS(MetLocationExtended))
+                    return true;
+                return false;
+            }
+        }
+    }
+
+    // Must only be used for Gen3 origin Pokémon that could have been transferred via Pal Park.
+    public bool PossiblyPalParkDP => MetLocationExtended == 0 && IsTrashPalParkDP();
+    public bool PossiblyPalParkPt => MetLocationExtended != 0 && IsTrashPalParkPt();
+    public bool PossiblyPalParkHGSS => MetLocationExtended != 0 && IsTrashPalParkHGSS();
+
+    private bool IsTrashPalParkDP() => true; // todo
+    private bool IsTrashPalParkPt() => true; // todo
+    private bool IsTrashPalParkHGSS() => true; // todo
 
     // Synthetic Trading Logic
     public bool BelongsTo(ITrainerInfo tr)
