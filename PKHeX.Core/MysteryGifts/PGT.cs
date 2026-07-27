@@ -169,6 +169,7 @@ public sealed class PGT(Memory<byte> raw) : DataMysteryGift(raw), IRibbonSetEven
             return;
 
         var seed = Util.Rand32();
+        var trXor = (tr.TID16 ^ tr.SID16) >> 3;
         bool filterIVs = criteria.IsSpecifiedIVs(2);
         while (true)
         {
@@ -187,7 +188,6 @@ public sealed class PGT(Memory<byte> raw) : DataMysteryGift(raw), IRibbonSetEven
                 continue;
 
             var xor = (a ^ b) >> 3;
-            var trXor = (tr.TID16 ^ tr.SID16) >> 3;
             bool shiny = xor == trXor;
             if (criteria.Shiny.IsShiny() != shiny)
                 continue;
